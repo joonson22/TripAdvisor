@@ -2,12 +2,23 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from '../components/app'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/app';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {login, logout, signup} from '../util/session_util';
+import configureStore from '../store/store'
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.login = login;
+  window.logout = logout;
+  window.signup = signup;
+
+  const store = configureStore();
+  window.getState = store.getState;
+  
   ReactDOM.render(
     <Router>
       <Route path='/' component={App}/>

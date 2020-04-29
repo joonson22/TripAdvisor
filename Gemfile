@@ -25,6 +25,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pry-rails'
 gem 'annotate'
+gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
